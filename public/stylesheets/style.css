@@ -1,0 +1,247 @@
+/*--------------------------Global--------------------------*/
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+p{
+    margin: 0px;
+    padding: 5px;
+}
+body {
+	background: #eae8e7;
+    font-family: "Arial";
+	height: auto;
+}
+.clearfix:after{
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+.container {
+    width: 980px;
+    margin: auto;
+}
+.student {
+	background: #ffffff;
+    width: 31%;
+    height: 330px;
+	display: inline-block;
+    border: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-transition: box-shadow 0.5s ease;
+    -moz-transition: box-shadow 0.5s ease;
+    -o-transition: box-shadow 0.5s ease;
+    -ms-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
+
+    transition: 1s linear all;
+    -webkit-transition: 1s linear all;
+}
+
+.student.ng-enter {
+  opacity: 0;
+}
+
+.student.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.student.ng-leave {
+  opacity: 1;
+}
+
+.student.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.student:hover {
+    -webkit-box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.9);
+}
+.student h2 {
+	margin: auto;
+    margin-top: 5px;
+}
+.student img {
+	width: 100%;
+	height: 188px;
+}
+.liked{
+    color: #d14848 !important;
+}
+.edit-content {
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fefefe;
+    margin: 10% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+    padding: 10px;
+    font-size: 15px;
+}
+.edit-student {
+    float: right;
+    margin: 20px 20px 0 0;
+}
+.edit-student a {
+    margin-right: 15px;
+    color: #797270;
+}
+.fa-2x {
+    font-size: 1.5em !important;
+}
+.txtname {
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.txtclass {
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.txtnameAdd {
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.txtclassAdd {
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.txtidAdd {
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.actions {
+    opacity: 0.95;
+    position: fixed;
+    z-index: 9999;
+    top: 260px;
+    right: -290px;
+    background: #FFFFFF;
+}
+
+.actions a,
+.actions a:hover{
+    display: block;
+}
+
+.actions:hover {
+    opacity: 1 !important;
+}
+
+.actions .switched-options {
+    position: relative;
+    width: 250px;
+    text-align: left;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+.actions .config-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    border-bottom: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+    margin-bottom: 5px;
+}
+
+.actions ul {
+    margin-bottom: 25px;
+}
+
+.actions ul .active a {
+    color: #005885;
+    font-weight: 700;
+}
+
+.actions ul .p {
+    font-weight: 400;
+    font-size: 12px;
+    color: #000;
+    margin-top: 10px;
+}
+
+.actions ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #808080;
+}
+.fa-arrow-down{
+    color: #e74c3c;
+}
+.fa-plus{
+    color: #673ab7;
+}
+.fa-refresh{
+    color: #008ed6;
+}
+.actions ul li a:hover {
+    color: #008ed6;
+}
+
+.actions ul.styles {
+    margin-top: 15px;
+}
+
+.actions ul.styles li {
+    display: inline-block;
+    margin-right: 40px;
+}
+.actions .switch-button {
+    opacity: 1 !important;
+    background: #FFF;
+    padding: 10px;
+    font-size: 24px;
+    color: #673ab7;
+    position: absolute;
+    overflow: hidden;
+    left: -44px;
+    top: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.actions .switch-button:hover {
+    color: #008ed6;
+    cursor: pointer;
+    text-decoration: none;
+}
+.version-title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    border-bottom: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}

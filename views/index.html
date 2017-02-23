@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body ng-app="myApp" ng-controller="StudentsController" ng-cloak>
+        <div class="actions" id="switch-style">
+            <a id="toggle-switcher" class="switch-button icon_tools"> <i class="fa fa-cogs"></i></a>
+            <div class="switched-options">                
+                <div class="config-title">
+                    Action :
+                </div>
+                <ul class="styles">                   
+                    <li><a href="#" ng-click="getStudents()" title="Get"><i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i>
+                    </a></li>                    
+                    
+                    <li><a href="#" ng-click="showDialog($event, 'add', null)" title="Add">
+                    <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
+                    </a></li>
+
+                    <li><a href="#" ng-click="reload()" title="Reload">
+                    <i class="fa fa-refresh fa-3x" aria-hidden="true"></i>
+                    </a></li>
+                    <li class="p">
+                        ( NOTE: Some basic action with RESTful API!)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/ng-template" id="dialog.tmpl.html">
+            <md-dialog aria-label="{{ctrl.title}}">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>{{ctrl.title}}</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="ctrl.cancel()">
+                        <md-icon md-svg-src="/images/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                    </md-button>
+                    </div>
+            </md-toolbar>
+            <md-dialog-content ng-cloak>
+                <div class="md-dialog-content">
+                    <form ng-submit="$event.preventDefault()">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Mã số sinh viên</label>
+                            <input ng-model="user.id" ng-disabled="ctrl.edit">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Họ tên</label>
+                            <input ng-model="user.name">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Lớp</label>
+                            <input ng-model="user.class">
+                        </md-input-container>
+                    </form>
+                </div>
+            </md-dialog-content>
+            <md-dialog-actions>
+                <md-button aria-label="{{ctrl.btntext}}" ng-click="ctrl.finish($event)">{{ctrl.btntext}}</md-button>
+            </md-dialog-actions>
+            </md-dialog>
+        </script>
+    </div>
+    <div class="container">
+        <ul>
+            <li class="student clearfix" ng-repeat="student in students">
+                <img src="/images/cover.png">
+                <div class="info-student">
+                    <h2>{{student.id}}</h2>
+                    <p>{{student.name}}</p>
+                    <p>{{student.class}}</p>
+                </div>
+                <div class="edit-student">
+                    <a href="javascript:void(0)" class="like"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a>
+                    <a href="#" ng-click="showDialog($event, 'edit', student)"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a>
+                    <a href="#" ng-click="removeStudent(student)"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+     <!--Back top top-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> -->
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="/javascripts/main_control.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+</body>
+</html>
